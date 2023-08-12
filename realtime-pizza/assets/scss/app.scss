@@ -1,0 +1,445 @@
+@import './variables';
+
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    color:$dark;
+}
+
+
+button
+{
+    @include button-style;
+}
+
+
+a
+{
+    text-decoration: none;
+    &:hover,&:focus
+    {
+        text-decoration: none;
+    }
+}
+
+
+//glowing blue borders for the input
+input:not([type='password']):focus,button:focus {
+    outline-width: 0;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+a:focus
+{
+    outline-width: 0;
+}
+
+
+
+//passwords..hide and show
+.fa-eye-slash,.fa-eye
+{
+    color:grey;
+    cursor: pointer;
+    display:none;
+}
+.fa-eye-slash
+{
+    display: initial;
+}
+
+
+
+
+
+
+//styling the header
+
+#header
+{
+    background:$primary;
+
+}
+
+.navigation {
+    border: 1px solid rgba(255,255,255,0.1);
+    height: 100%;
+    width: 320px;
+    background-color: #232323;
+    color: #232323;
+    position: absolute;
+    z-index: 9999;
+    top: 0px;
+    right: calc(100% - 320px);
+    transition: right 0.5s;
+  }
+  
+ 
+  .navigation .menu {
+    list-style-type: none;
+  }
+  
+  .navigation .menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navigation .menu a {
+    display: block;
+    padding: 15px;
+    line-height: 20px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .navigation .menu a::after {
+    content: '';
+    background-color: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    transition: left 0.25s, right 0.25s;
+  }
+  
+  .navigation .menu a:hover::after {
+    right: 0;
+  }
+  
+  .navigation .has-menu {
+    position: relative;
+  }
+  
+  .navigation .has-menu::before {
+    content: '';
+    border-left: 1px solid rgba(255,255,255,0.1);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .navigation .has-menu::after {
+    content: '\027A4';
+    padding: 15px 0;
+    height: 50px;
+    width: 50px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transform: rotate(90deg);
+    transition: transform 0.25s;
+  }
+  
+  .navigation .has-menu > .menu {
+    overflow: hidden;
+    max-height: auto;
+  }
+  
+  .navigation .menu .menu {
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navigation .has-menu > .menu > li > a {
+    padding-left: 45px;
+    transition: padding 1s;
+  }
+  
+  .navigation .has-menu > .menu > li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Closed States */
+  .navigation:not(.open) {
+    right: 100%;
+  }
+  
+  .navigation:not(.open) .toggle-wrapper .show {
+    right: 0px;
+  }
+  
+  .navigation:not(.open) .toggle-wrapper .hide {
+    right: 50px;
+  }
+  
+  .navigation .has-menu:not(.open)::after {
+    transform: rotate(-90deg);
+  }
+  
+  .navigation .has-menu:not(.open) > .menu {
+    border-top: none;
+    max-height: 0;
+  }
+  
+  .navigation .has-menu:not(.open) > .menu > li > a {
+    padding-left: 15px;
+  }
+  
+  
+  .navigation .toggle-wrapper {
+    // border: 1px solid rgba(255,255,255,0.1);
+    border-left: none;
+    height: 52px;
+    width: 51px;
+    // background-color: rgba(255,255,255,0.1);
+    overflow: hidden;
+    position: absolute;
+    top: -1px;
+    right: calc(0px - 52px);
+  }
+  
+  .navigation .toggle-wrapper span {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: transparent;
+    // color: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    transition: right 0.25s;
+  }
+  
+  .navigation .toggle-wrapper .show {
+    right: -50px;
+  }
+
+
+
+.cart-link
+{
+    // background:$primary;
+
+    span
+    {
+        display:inline-block;
+        background:$secondary;
+        color:$dark;
+    }
+
+    // &:hover{
+    //     background:$primaryHover;
+    // }
+}
+
+
+
+
+
+//styling the home page
+
+//Styling the banner
+#hero
+{
+    background-color: $secondary;
+}
+
+
+//styles for the menu section
+#menu
+{
+    h1
+    {
+        word-spacing: 1px;
+        text-shadow: 4px 7px 8px $gray;
+
+    }
+
+    .card
+    {
+        .card-img-top
+        {
+            width:50% !important;
+        }
+        .card-img-container
+        {
+            background-color: $secondary;
+            text-align: center;
+        }
+        .card-text
+        {
+            background:$secondary;
+        }
+
+        a
+        {
+            display: inline-block;
+            border:3px solid $primary;
+            color:$primary;
+            &:hover
+            {
+                color:$pure;
+                background-color:$primary;
+            }
+        }
+
+        &:hover
+        {
+            transform:scale(1.07);
+        }
+
+    }
+    
+}
+
+
+
+//styling the cart page
+#empty-cart
+{
+    div
+    {
+        height:90vh;
+    }
+    background:$secondary;
+
+    a
+    {
+        color:$pure;
+        &:hover{
+            color:$pure;
+        }
+    }
+}
+
+
+#order-summary
+{
+    background-color: $secondary;
+    min-height:90vh;
+    height:auto;
+
+    .cart-total-amt
+    {
+        color:$primary;
+        cursor:pointer;
+        &:hover{
+            color:$primaryHover;
+            transition: $smooth;
+        }
+    }
+}
+
+
+
+
+
+//styling the register and login pages
+#register,#login
+{
+    height:95vh;
+    background:$secondary;
+
+    a
+    {
+        color:$primary;
+        &:hover{
+            color:$primaryHover;
+        }
+    }
+}
+
+
+
+
+//styling the orders page
+section[id$=orders]
+{
+    height:90vh;
+    overflow-x: scroll;
+}
+
+
+#customer-orders
+{
+    overflow-x: scroll;
+    background-color: $secondary;
+    //$primary color for all rows
+    tr
+    {
+        color:$primary;
+    }
+
+    //hover effect for order id 
+    tr td:first-child a
+    {
+        &:hover
+        {
+            color:$primaryHover;
+        }
+    }
+    
+    //undelivered orders -->green color
+    tr:not(.line-through)
+    {
+        color:green;
+        td:first-child a
+        {
+            &:hover
+            {
+                color:darkgreen;
+            }
+        }
+    }
+
+    //header row  -->dark
+    tr:first-child
+    {
+        color:$dark;
+    }
+}
+
+
+
+//styling the payment page
+#payment
+{
+    height:90vh;
+    background:$secondary;
+
+    a
+    {
+        &:hover
+        {
+            color:$pure;
+        }
+    }
+
+}
+
+
+//styling the track page
+#track
+{
+    background-color: $secondary;
+    min-height: 85vh;
+    .order-id
+    {
+        color:green;
+    }
+    .circle
+    {
+        height:13px;
+        width:13px;
+        // background-color: $dark;
+    }
+    .line
+    {
+        height:8vh;
+        border-left:2px solid $dark;
+    }
+}
