@@ -297,7 +297,7 @@ orderStatusFormEvent();
 let loggedIn=$("input[name='login-status']").val();
 if(loggedIn)
 {
-    const socket=io('http://localhost:1000', { transports: ['websocket', 'polling', 'flashsocket'] });
+    const socket=io('https://realtime-pizza-production.up.railway.app', { transports: ['websocket', 'polling', 'flashsocket'] });
 
     socket.on("connect",function(){
 
