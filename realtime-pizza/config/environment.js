@@ -1,7 +1,7 @@
 module.exports={
     port:1000,
     sessionCookieSecret:"real-time-pizza-blahhhh",
-    mongoDbUrl:'mongodb+srv://charmi:charmi003@beach-resort.wnheq.mongodb.net/realtime-pizza?retryWrites=true&w=majority',
+    mongoDbUrl:'mongodb+srv://charmi:charmi1230@beach-resort.rbyngus.mongodb.net/?retryWrites=true&w=majority&appName=beach-resort',
     smtp:{   
         service:"gmail",
         host:"smtp.gmail.com",
